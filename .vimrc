@@ -1,4 +1,5 @@
 set rnu
+set number
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -8,15 +9,20 @@ set smarttab
 set nowrap
 set ruler
 
-" Color scheme (terminal)
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=2
-colorscheme darkblue
-
 " PLUGINS
 call plug#begin()
 	Plug 'preservim/nerdtree'
 	Plug 'vim-scripts/vim-gitgutter'
+	Plug 'joshdick/onedark.vim'
+	Plug 'itchyny/lightline.vim'
 call plug#end()
+
+" COLORSCHEME
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
+hi Comment guifg=#C678DF
+
+" SETUP FOT LIGHTLINE
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
