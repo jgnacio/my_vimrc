@@ -8,21 +8,26 @@ set smartindent
 set smarttab
 set nowrap
 set ruler
+set splitright
+set splitbelow
+set noshowmode
+
+" QUIT SWAP FILES
+set noswapfile
+set nobackup
+set nowritebackup
 
 " PLUGINS
 call plug#begin()
 	Plug 'preservim/nerdtree'
-	Plug 'vim-scripts/vim-gitgutter'
-	Plug 'joshdick/onedark.vim'
-	Plug 'itchyny/lightline.vim'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'scroolose/syntastic'
 call plug#end()
 
 " COLORSCHEME
-colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
 hi Comment guifg=#C678DF
 
-" SETUP FOT LIGHTLINE
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
+" NerdTree
+map <C-b> :NERDTreeToggle<CR>
